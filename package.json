@@ -1,0 +1,30 @@
+{
+  "name": "jeasy",
+  "version": "1.0.0",
+  "description": "A gentle and easy-to-use JavaScript utility library for family-friendly UI development.",
+  "main": "jeasy.js",
+  "scripts": {
+    "test": "echo \"No tests yet. Stay kind and keep coding!\""
+  },
+  "keywords": [
+    "javascript",
+    "utility",
+    "dom",
+    "family-friendly",
+    "easy",
+    "ui",
+    "gentle",
+    "xss-safe",
+    "form-helper"
+  ],
+  "author": "ytaka500491",
+  "license": "MIT",
+  "homepage": "https://github.com/ytaka500491/jeasy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ytaka500491/jeasy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ytaka500491/jeasy/issues"
+  }
+}
