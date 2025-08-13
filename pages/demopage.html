@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>jeasy.js Demo</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; background: #f9f9f9; }
+    .box { margin: 1em 0; padding: 1em; background: #fff; border-radius: 8px; box-shadow: 0 0 5px #ccc; }
+    .error-msg { color: red; font-size: 0.9em; margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <h1>jeasy.js Demo</h1>
+
+  <div class="box">
+    <label for="name">名前：</label>
+    <input type="text" id="name">
+    <button id="checkBtn">確認</button>
+  </div>
+
+  <div class="box">
+    <button onclick="friendlyAlert('こんにちは、ぬいぐるみさん！')">friendlyAlert()</button>
+    <button onclick="CustomAlert('保存しました', { bg: '#d4fcd4', color: '#065f46' })">CustomAlert()</button>
+    <button onclick="scrollToId('bottom')">scrollToId()</button>
+  </div>
+
+  <div id="bottom" class="box">
+    <p>ここがスクロール先です。</p>
+  </div>
+
+  <script src="https://ytaka500491.github.io/jeasy/jeasy.js"></script>
+  <script>
+    const nameInput = getId("name");
+    const checkBtn = getId("checkBtn");
+
+    event(checkBtn, "click", () => {
+      clearError(nameInput);
+      if (getValue(nameInput).trim() === "") {
+        highlightError(nameInput, "名前を入力してください");
+        friendlyAlert("名前が空です！");
+        scrollToId("#name");
+      } else {
+        CustomAlert("ようこそ " + safeText(getValue(nameInput)) + " さん！");
+      }
+    });
+  </script>
+</body>
+</html>
